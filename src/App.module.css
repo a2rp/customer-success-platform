@@ -1,0 +1,37 @@
+.app {
+    min-height: 100vh;
+    .main {
+        min-height: calc(100vh - 76px);
+        margin-top: 76px;
+        margin-left: 252px;
+        padding: 36px 42px 48px;
+
+        @media (max-width: 980px) {
+            padding-right: 28px;
+            padding-left: 28px;
+        }
+
+        @media (max-width: 720px) {
+            min-height: calc(100vh - 68px);
+            margin-top: 68px;
+            margin-left: 0;
+            padding: 25px 18px 34px;
+        }
+    }
+
+    .skipLink {
+        position: fixed;
+        z-index: 100;
+        top: 12px;
+        left: 12px;
+        padding: 10px 14px;
+        transform: translateY(-160%);
+        border-radius: 8px;
+        color: #fff;
+        background: var(--color-primary-dark);
+
+        &:focus {
+            transform: translateY(0);
+        }
+    }
+}
