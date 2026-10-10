@@ -108,7 +108,7 @@ npm run build
 npm run deploy
 ```
 
-The build uses Vite's project base path and creates the GitHub Pages fallback page. `npm run deploy` builds the app and publishes the `dist` folder to the `gh-pages` branch.
+The build uses Vite's project base path, creates direct entry points for each app route, and includes a GitHub Pages fallback for unmatched routes. `npm run deploy` builds the app and publishes the `dist` folder to the `gh-pages` branch.
 
 Live site: [https://a2rp.github.io/customer-success-platform/](https://a2rp.github.io/customer-success-platform/).
 
@@ -137,3 +137,4 @@ These improvements need a backend or external service and are not implemented in
 - Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
 - Buy Me a Coffee: [https://buymeacoffee.com/ashishranjan](https://buymeacoffee.com/ashishranjan)
 - Patreon: [https://www.patreon.com/ashishranjan](https://www.patreon.com/ashishranjan)
+
