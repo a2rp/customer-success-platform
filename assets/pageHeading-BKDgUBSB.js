@@ -1,1 +1,0 @@
-import{D as e}from"./index-P0ENg7FZ.js";var t={heading:`_heading_adlbm_1`,actions:`_actions_adlbm_11`},n=e(),r=({title:e,description:r,actions:i})=>(0,n.jsxs)(`section`,{className:t.heading,children:[(0,n.jsxs)(`div`,{children:[(0,n.jsx)(`h1`,{children:e}),r&&(0,n.jsx)(`p`,{children:r})]}),i&&(0,n.jsx)(`div`,{className:t.actions,children:i})]});export{r as t};
