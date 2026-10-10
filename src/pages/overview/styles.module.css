@@ -144,7 +144,7 @@
     .healthHint { display: flex; align-items: center; gap: 7px; padding-top: 12px; border-top: 1px solid #edf0ed; color: #87938d; font-size: 13px; svg { width: 14px; height: 14px; color: #719482; } }
 
     .textLink { display: inline-flex; align-items: center; gap: 5px; color: var(--color-primary); font-size: 13px; font-weight: 650; white-space: nowrap; svg { width: 14px; height: 14px; } &:hover, &:focus-visible { color: var(--color-primary-dark); } }
-    .addTaskButton { min-height: 36px; padding: 0 11px; font-size: 13px; }
+    .addTaskButton { min-height: 36px; flex: 0 0 auto; padding: 0 11px; font-size: 13px; white-space: nowrap; }
 
     .accountList,
     .taskList,

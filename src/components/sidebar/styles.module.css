@@ -141,7 +141,4 @@
     background: rgb(22 42 37 / 28%);
 }
 
-@media (max-width: 720px) {
-    .backdrop { display: none; }
-}
 

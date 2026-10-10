@@ -15,7 +15,13 @@ const CustomersPage = () => {
     const [status, setStatus] = useState(searchParams.get("status") || "All statuses");
     const [renewalFilter, setRenewalFilter] = useState(searchParams.get("renewal") || "all");
     const [sortBy, setSortBy] = useState("renewal");
-    const [view, setView] = useState("list");
+    const [view, setView] = useState(() => window.innerWidth <= 780 ? "cards" : "list");
+
+    useEffect(() => {
+        const updateView = () => setView(window.innerWidth <= 780 ? "cards" : "list");
+        window.addEventListener("resize", updateView);
+        return () => window.removeEventListener("resize", updateView);
+    }, []);
     const accountParam = searchParams.get("account");
 
     useEffect(() => {
@@ -123,5 +129,6 @@ const CustomersPage = () => {
 };
 
 export default CustomersPage;
+
 
 

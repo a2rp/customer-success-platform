@@ -3,7 +3,7 @@ import Modal from "../modal";
 import styles from "./styles.module.css";
 
 const ConfirmDialog = ({ title, description, confirmLabel, onConfirm, onClose }) => (
-    <Modal description={description} onClose={onClose} size="small" title={title}>
+    <Modal description="Review this change before confirming." onClose={onClose} size="small" title={title}>
         <div className={styles.confirm}>
             <span aria-hidden="true" className={styles.icon}><FiAlertTriangle /></span>
             <p>{description}</p>

@@ -1,4 +1,5 @@
-﻿import { FiActivity, FiBriefcase, FiCheckSquare, FiCompass, FiGrid, FiSettings, FiUsers, FiX } from "react-icons/fi";
+﻿import { useEffect, useState } from "react";
+import { FiActivity, FiBriefcase, FiCheckSquare, FiCompass, FiGrid, FiSettings, FiUsers, FiX } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import { useApp } from "../../context/useApp.js";
 import styles from "./styles.module.css";
@@ -13,6 +14,13 @@ const navigation = [
 
 const Sidebar = () => {
     const { customers, tasks, playbooks, workspace, openDialog, mobileNavOpen, setMobileNavOpen } = useApp();
+    const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 720);
+
+    useEffect(() => {
+        const updateLayout = () => setIsMobile(window.innerWidth <= 720);
+        window.addEventListener("resize", updateLayout);
+        return () => window.removeEventListener("resize", updateLayout);
+    }, []);
     const atRisk = customers.filter((customer) => customer.status === "At risk").length;
     const openTasks = tasks.filter((task) => task.status === "Open").length;
     const activePlaybooks = playbooks.filter((playbook) => playbook.active).length;
@@ -20,7 +28,7 @@ const Sidebar = () => {
     return (
         <>
             <button aria-label="Close workspace navigation" className={mobileNavOpen ? styles.backdropOpen : styles.backdrop} onClick={() => setMobileNavOpen(false)} tabIndex={mobileNavOpen ? 0 : -1} type="button" />
-            <aside aria-label="Workspace navigation" className={mobileNavOpen ? styles.sidebarOpen : styles.sidebar}>
+            <aside aria-hidden={isMobile && !mobileNavOpen} inert={isMobile && !mobileNavOpen ? true : undefined} aria-label="Workspace navigation" className={mobileNavOpen ? styles.sidebarOpen : styles.sidebar}>
                 <div className={styles.sidebarHead}>
                     <span>WORKSPACE</span>
                     <button aria-label="Close navigation" onClick={() => setMobileNavOpen(false)} type="button"><FiX aria-hidden="true" /></button>
@@ -66,4 +74,6 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
 

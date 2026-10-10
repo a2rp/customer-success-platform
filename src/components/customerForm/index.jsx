@@ -44,12 +44,12 @@ const CustomerForm = ({ customerId }) => {
                     <label className={styles.field}>
                         <span>Company name</span>
                         <input autoComplete="organization" data-autofocus name="name" onChange={handleChange} placeholder="e.g. Coastline Health" value={values.name} />
-                        {errors.name && <small>{errors.name}</small>}
+                        {errors.name && <small role="alert">{errors.name}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Company domain</span>
                         <input autoComplete="url" name="domain" onChange={handleChange} placeholder="company.com" value={values.domain} />
-                        {errors.domain && <small>{errors.domain}</small>}
+                        {errors.domain && <small role="alert">{errors.domain}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Industry</span>
@@ -66,12 +66,12 @@ const CustomerForm = ({ customerId }) => {
                     <label className={styles.field}>
                         <span>Annual recurring revenue</span>
                         <div className={styles.inputPrefix}><span>$</span><input min="1" name="arr" onChange={handleChange} type="number" value={values.arr} /></div>
-                        {errors.arr && <small>{errors.arr}</small>}
+                        {errors.arr && <small role="alert">{errors.arr}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Health score</span>
                         <div className={styles.inputSuffix}><input max="100" min="0" name="health" onChange={handleChange} type="number" value={values.health} /><span>/ 100</span></div>
-                        {errors.health && <small>{errors.health}</small>}
+                        {errors.health && <small role="alert">{errors.health}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Health status</span>
@@ -82,17 +82,17 @@ const CustomerForm = ({ customerId }) => {
                     <label className={styles.field}>
                         <span>Renewal date</span>
                         <input name="renewal" onChange={handleChange} type="date" value={values.renewal} />
-                        {errors.renewal && <small>{errors.renewal}</small>}
+                        {errors.renewal && <small role="alert">{errors.renewal}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Primary contact</span>
                         <input autoComplete="name" name="contact" onChange={handleChange} placeholder="Full name" value={values.contact} />
-                        {errors.contact && <small>{errors.contact}</small>}
+                        {errors.contact && <small role="alert">{errors.contact}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Contact email</span>
                         <input autoComplete="email" name="email" onChange={handleChange} placeholder="name@company.com" type="email" value={values.email} />
-                        {errors.email && <small>{errors.email}</small>}
+                        {errors.email && <small role="alert">{errors.email}</small>}
                     </label>
                     <label className={styles.field}>
                         <span>Customer success owner</span>
@@ -115,4 +115,5 @@ const CustomerForm = ({ customerId }) => {
 };
 
 export default CustomerForm;
+
 
