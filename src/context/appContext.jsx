@@ -1,4 +1,5 @@
-﻿import { createContext, useContext, useState } from "react";
+﻿import { useState } from "react";
+import { AppContext } from "./context.js";
 
 const initialCustomers = [
     { id: "meridian", name: "Meridian Health", domain: "meridian.health", industry: "Healthcare", plan: "Enterprise", arr: 184000, health: 94, status: "Healthy", renewal: "2027-01-18", owner: "Olivia Chen", contact: "Maya Brooks", email: "maya@meridian.health", avatar: "customer-1.jpg", notes: "Expanding their care coordination rollout to two new regions.", updated: "Today" },
@@ -40,7 +41,6 @@ const initialActivity = [
 ];
 
 const makeId = (prefix) => prefix + "-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7);
-const AppContext = createContext(null);
 
 export const AppProvider = ({ children }) => {
     const [customers, setCustomers] = useState(initialCustomers);
@@ -50,7 +50,7 @@ export const AppProvider = ({ children }) => {
     const [activity, setActivity] = useState(initialActivity);
     const [dialog, setDialog] = useState(null);
     const [toasts, setToasts] = useState([]);
-    const [workspace, setWorkspace] = useState({ name: "Harbor Studio", notificationsEnabled: true });
+    const [workspace, setWorkspace] = useState({ name: "Harbor Studio", showBadges: true }); const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
     const addToast = (message, type = "success") => {
         const id = makeId("toast");
@@ -156,20 +156,17 @@ export const AppProvider = ({ children }) => {
         addActivity("You started " + playbook.title + " for " + customer.name, "playbook");
         addToast(playbook.title + " started for " + customer.name);
     };
-    const markAllNotificationsRead = () => setNotifications((current) => current.map((item) => ({ ...item, read: true })));
-    const toggleWorkspaceNotifications = () => setWorkspace((current) => ({ ...current, notificationsEnabled: !current.notificationsEnabled }));
+    const markAllNotificationsRead = () => setNotifications((current) => current.map((item) => ({ ...item, read: true }))); const markNotificationRead = (id) => setNotifications((current) => current.map((item) => item.id === id ? { ...item, read: true } : item));
+
 
     const value = {
         customers, tasks, playbooks, notifications, activity, dialog, toasts, workspace,
         addToast, dismissToast, openDialog, closeDialog, addCustomer, updateCustomer, deleteCustomer,
         addTask, updateTask, deleteTask, toggleTask, addPlaybook, updatePlaybook, deletePlaybook,
-        togglePlaybook, runPlaybook, markAllNotificationsRead, toggleWorkspaceNotifications, setWorkspace,
+        togglePlaybook, runPlaybook, markAllNotificationsRead, markNotificationRead, setWorkspace, mobileNavOpen, setMobileNavOpen,
     };
     return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
-export const useApp = () => {
-    const value = useContext(AppContext);
-    if (!value) throw new Error("useApp must be used within AppProvider");
-    return value;
-};
+
+

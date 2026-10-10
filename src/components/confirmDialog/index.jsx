@@ -1,5 +1,4 @@
 ﻿import { FiAlertTriangle } from "react-icons/fi";
-import { useApp } from "../../context/appContext.jsx";
 import Modal from "../modal";
 import styles from "./styles.module.css";
 
@@ -16,9 +15,6 @@ const ConfirmDialog = ({ title, description, confirmLabel, onConfirm, onClose })
     </Modal>
 );
 
-export const useConfirmAction = () => {
-    const { openDialog } = useApp();
-    return (entity, item) => openDialog("confirmDelete", { entity, id: item.id, name: item.name || item.title });
-};
-
 export default ConfirmDialog;
+
+

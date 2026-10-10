@@ -1,0 +1,137 @@
+﻿.form {
+    display: grid;
+    gap: 18px;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .field {
+        display: grid;
+        min-width: 0;
+        gap: 7px;
+
+        > span {
+            color: #41534d;
+            font-size: 13px;
+            font-weight: 680;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-width: 0;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 11px;
+            outline: none;
+            color: var(--color-text);
+            background: #fff;
+            font-size: 14px;
+            transition: border-color 150ms ease, box-shadow 150ms ease;
+
+            &:focus {
+                border-color: #6ca192;
+                box-shadow: 0 0 0 4px rgb(23 104 90 / 10%);
+            }
+        }
+
+        textarea {
+            min-height: 84px;
+        }
+
+        small {
+            color: var(--color-danger);
+            font-size: 13px;
+        }
+    }
+
+    .inputPrefix,
+    .inputSuffix {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        border: 1px solid var(--color-border);
+        border-radius: 11px;
+        background: #fff;
+
+        span {
+            padding: 0 12px;
+            color: var(--color-muted);
+            font-size: 14px;
+        }
+
+        input {
+            min-height: 42px;
+            border: 0;
+            box-shadow: none;
+        }
+    }
+
+    .inputSuffix {
+        span {
+            padding: 0 11px 0 0;
+            white-space: nowrap;
+        }
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        padding-top: 3px;
+    }
+
+    .cancelButton,
+    .submitButton {
+        min-height: 44px;
+        padding: 0 17px;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 680;
+        transition: border-color 160ms ease, box-shadow 160ms ease;
+
+        &:hover,
+        &:focus-visible {
+            border-color: #9bb5aa;
+            box-shadow: 0 0 0 4px rgb(23 104 90 / 9%);
+        }
+    }
+
+    .cancelButton {
+        color: var(--color-text);
+        background: #fff;
+    }
+
+    .submitButton {
+        border-color: var(--color-primary);
+        color: #fff;
+        background: var(--color-primary);
+
+        &:hover,
+        &:focus-visible {
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 0 0 4px rgb(23 104 90 / 15%);
+        }
+    }
+
+    @media (max-width: 580px) {
+        .grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .actions {
+            .cancelButton,
+            .submitButton {
+                flex: 1;
+                padding: 0 10px;
+            }
+        }
+    }
+}

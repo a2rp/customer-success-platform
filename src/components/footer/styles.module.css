@@ -1,0 +1,87 @@
+﻿.footer {
+    margin-left: 252px;
+    padding: 21px 34px 19px;
+    border-top: 1px solid var(--color-border);
+    background: #fff;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        max-width: 1480px;
+        margin: 0 auto;
+    }
+
+    .identity { display: grid; gap: 4px; }
+
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        width: fit-content;
+        color: var(--color-ink);
+        font-size: 15px;
+        font-weight: 760;
+        letter-spacing: -0.04em;
+
+        img { width: 25px; height: 25px; border-radius: 7px; object-fit: contain; }
+        .brandDot { color: #db936f; }
+    }
+
+    .identity p { color: #839088; font-size: 13px; }
+    .identity p a { padding: 0 4px; color: #53665d; &:hover, &:focus-visible { color: var(--color-primary); } }
+
+    .links {
+        display: flex;
+        max-width: 630px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 3px 7px;
+
+        > a {
+            display: grid;
+            width: 35px;
+            height: 35px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: #75847c;
+            place-items: center;
+            transition: border-color 150ms ease, box-shadow 150ms ease, color 150ms ease;
+
+            svg { width: 17px; height: 17px; }
+            &:hover,
+            &:focus-visible { border-color: #dce8df; color: var(--color-primary); box-shadow: 0 0 0 3px rgb(23 104 90 / 7%); }
+        }
+    }
+
+    .tooltip {
+        z-index: 100;
+        padding: 9px 12px;
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: 11px;
+        color: #f8fbf8;
+        background: #1d2c28;
+        box-shadow: 0 8px 24px rgb(12 30 24 / 24%);
+        pointer-events: none;
+    }
+
+    .tooltipArrow { border-color: #1d2c28; }
+
+    .tooltipContent {
+        display: grid;
+        gap: 2px;
+
+        strong { font-size: 13px; font-weight: 700; }
+        span { color: #c7d1cc; font-size: 13px; }
+    }
+
+    @media (max-width: 720px) {
+        margin-left: 0;
+        padding: 19px 18px;
+
+        .inner { align-items: flex-start; flex-direction: column; gap: 14px; }
+        .links { justify-content: flex-start; gap: 2px; }
+    }
+}

@@ -1,0 +1,52 @@
+﻿.profile {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+
+    .avatar {
+        display: grid;
+        width: 72px;
+        height: 72px;
+        border: 4px solid #fff;
+        border-radius: 24px;
+        color: #fff;
+        background: var(--color-primary);
+        box-shadow: 0 5px 18px rgb(22 48 42 / 14%);
+        font-size: 20px;
+        font-weight: 750;
+        place-items: center;
+    }
+
+    h3 { margin-top: 13px; color: var(--color-ink); font-size: 18px; font-weight: 720; }
+    p { margin-top: 2px; color: var(--color-muted); font-size: 14px; }
+
+    a,
+    > div {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 13px;
+        color: var(--color-primary);
+        font-size: 14px;
+
+        svg { width: 16px; height: 16px; }
+    }
+
+    > div { margin-top: 8px; color: var(--color-muted); }
+
+    button {
+        min-height: 43px;
+        margin-top: 21px;
+        padding: 0 21px;
+        border: 1px solid var(--color-primary);
+        border-radius: 11px;
+        color: #fff;
+        background: var(--color-primary);
+        font-size: 14px;
+        font-weight: 650;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+
+        &:hover,
+        &:focus-visible { border-color: var(--color-primary-dark); box-shadow: 0 0 0 4px rgb(23 104 90 / 14%); }
+    }
+}

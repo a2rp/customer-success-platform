@@ -1,4 +1,4 @@
-import styles from "./App.module.css";
+﻿import styles from "./App.module.css";
 import AppRoutes from "./AppRoutes.jsx";
 import DialogLayer from "./components/dialogLayer";
 import Footer from "./components/footer";
@@ -21,3 +21,4 @@ const App = () => (
 );
 
 export default App;
+

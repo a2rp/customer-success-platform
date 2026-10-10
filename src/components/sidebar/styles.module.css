@@ -1,0 +1,147 @@
+﻿.backdrop { display: none; }
+.sidebar,
+.sidebarOpen {
+    position: fixed;
+    z-index: 35;
+    top: 76px;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 252px;
+    flex-direction: column;
+    padding: 25px 15px 14px;
+    border-right: 1px solid var(--color-border);
+    background: #fbfcfa;
+
+    .sidebarHead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 11px 12px;
+        color: #8a9891;
+        font-size: 13px;
+        font-weight: 760;
+        letter-spacing: 0.09em;
+
+        button { display: none; }
+    }
+
+    .navigation { display: grid; gap: 4px; }
+
+    .link,
+    .activeLink {
+        position: relative;
+        display: flex;
+        min-height: 47px;
+        align-items: center;
+        gap: 12px;
+        padding: 0 12px;
+        border: 1px solid transparent;
+        border-radius: 13px;
+        color: #63716b;
+        font-size: 14px;
+        font-weight: 620;
+        transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+
+        > svg { width: 18px; height: 18px; flex: 0 0 18px; color: #8a9991; }
+        > span { flex: 1; }
+        small { display: grid; min-width: 22px; height: 22px; padding: 0 5px; border-radius: 8px; color: #815e4b; background: #f5e9df; font-size: 13px; font-weight: 700; place-items: center; }
+
+        &:hover,
+        &:focus-visible { border-color: #e4eae3; color: var(--color-ink); background: #f3f7f2; }
+    }
+
+    .activeLink {
+        border-color: #d8e9de;
+        color: var(--color-primary-dark);
+        background: #eaf4ed;
+
+        > svg { color: var(--color-primary); }
+    }
+
+    .playbookCard {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 27px;
+        padding: 12px 10px;
+        border: 1px solid #e5ebe3;
+        border-radius: 15px;
+        background: #fff;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+
+        &:hover,
+        &:focus-visible { border-color: #b8cfc0; box-shadow: 0 4px 16px rgb(23 104 90 / 8%); }
+
+        > span:nth-child(2) { display: grid; min-width: 0; flex: 1; gap: 2px; }
+        strong { overflow: hidden; color: var(--color-ink); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+        small { color: var(--color-muted); font-size: 13px; }
+        .playbookIcon { display: grid; width: 34px; height: 34px; flex: 0 0 34px; border-radius: 11px; color: var(--color-primary); background: var(--color-primary-soft); place-items: center; svg { width: 17px; height: 17px; } }
+        .cardArrow { width: 15px; height: 15px; color: #94a199; }
+    }
+
+    .sidebarBottom { display: grid; gap: 10px; margin-top: auto; }
+
+    .healthNote {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 10px;
+        border: 1px solid #dcebe1;
+        border-radius: 14px;
+        background: #f3f8f1;
+
+        .healthIcon { display: grid; width: 32px; height: 32px; flex: 0 0 32px; border-radius: 10px; color: var(--color-primary); background: #e0eee3; place-items: center; svg { width: 16px; height: 16px; } }
+        > span:last-child { display: grid; min-width: 0; gap: 1px; }
+        strong { color: var(--color-ink); font-size: 13px; }
+        small { color: var(--color-muted); font-size: 13px; line-height: 1.3; }
+    }
+
+    .userButton {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 5px 3px;
+        border: 0;
+        border-top: 1px solid var(--color-border);
+        text-align: left;
+        background: transparent;
+
+        .avatar { display: grid; width: 35px; height: 35px; flex: 0 0 35px; border-radius: 13px; color: #fff; background: #d28e70; font-size: 13px; font-weight: 700; place-items: center; }
+        > span:last-child { display: grid; flex: 1; }
+        strong { color: var(--color-ink); font-size: 13px; font-weight: 700; }
+        small { color: var(--color-muted); font-size: 13px; }
+        &:hover strong,
+        &:focus-visible strong { color: var(--color-primary); }
+    }
+
+    .settingsButton { position: absolute; right: 18px; bottom: 21px; display: grid; width: 34px; height: 34px; border: 1px solid transparent; border-radius: 10px; color: #7d8b83; background: transparent; place-items: center; transition: border-color 150ms ease, box-shadow 150ms ease; svg { width: 16px; height: 16px; } &:hover, &:focus-visible { border-color: var(--color-border); box-shadow: 0 0 0 3px rgb(23 104 90 / 8%); } }
+
+    @media (max-width: 720px) {
+        top: 68px;
+        z-index: 42;
+        width: min(290px, calc(100vw - 46px));
+        transform: translateX(-105%);
+        transition: transform 200ms ease;
+
+        .sidebarHead button { display: grid; width: 30px; height: 30px; border: 1px solid var(--color-border); border-radius: 9px; background: #fff; place-items: center; svg { width: 16px; height: 16px; } }
+    }
+}
+
+.sidebarOpen {
+    transform: translateX(0);
+}
+
+.backdropOpen {
+    position: fixed;
+    z-index: 41;
+    inset: 68px 0 0;
+    display: block;
+    border: 0;
+    background: rgb(22 42 37 / 28%);
+}
+
+@media (max-width: 720px) {
+    .backdrop { display: none; }
+}
+

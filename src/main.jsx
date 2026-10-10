@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+﻿import { createRoot } from "react-dom/client";
 import { OverlayScrollbars } from "overlayscrollbars";
 import "overlayscrollbars/overlayscrollbars.css";
 import { BrowserRouter } from "react-router-dom";
@@ -15,9 +15,11 @@ OverlayScrollbars(document.body, {
 });
 
 createRoot(document.getElementById("root")).render(
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
         <AppProvider>
             <App />
         </AppProvider>
     </BrowserRouter>,
 );
+
+

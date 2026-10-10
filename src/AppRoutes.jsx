@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+﻿import { lazy, Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Loading from "./components/loading";
 
@@ -27,3 +27,4 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+
