@@ -17,8 +17,17 @@
         place-items: center;
     }
 
-    h3 { margin-top: 13px; color: var(--color-ink); font-size: 18px; font-weight: 720; }
-    p { margin-top: 2px; color: var(--color-muted); font-size: 14px; }
+    h3 {
+        margin-top: 13px;
+        color: var(--color-ink);
+        font-size: 18px;
+        font-weight: 720;
+    }
+    p {
+        margin-top: 2px;
+        color: var(--color-muted);
+        font-size: 14px;
+    }
 
     a,
     > div {
@@ -29,10 +38,16 @@
         color: var(--color-primary);
         font-size: 14px;
 
-        svg { width: 16px; height: 16px; }
+        svg {
+            width: 16px;
+            height: 16px;
+        }
     }
 
-    > div { margin-top: 8px; color: var(--color-muted); }
+    > div {
+        margin-top: 8px;
+        color: var(--color-muted);
+    }
 
     button {
         min-height: 43px;
@@ -44,9 +59,14 @@
         background: var(--color-primary);
         font-size: 14px;
         font-weight: 650;
-        transition: border-color 150ms ease, box-shadow 150ms ease;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
 
         &:hover,
-        &:focus-visible { border-color: var(--color-primary-dark); box-shadow: 0 0 0 4px rgb(23 104 90 / 14%); }
+        &:focus-visible {
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 0 0 4px rgb(23 104 90 / 14%);
+        }
     }
 }

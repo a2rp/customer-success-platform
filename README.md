@@ -9,14 +9,14 @@ Harbor is a polished customer success workspace for keeping account health, rene
 
 ## Pages
 
-| Page | Route | What it does |
-| --- | --- | --- |
-| Overview | `/` | Shows portfolio health, revenue, customers needing attention, upcoming renewals, recent activity, and next actions. Change the health chart range, open account details, and complete a task here. |
-| Customers | `/customers` | Search, filter, sort, and switch between list and card views. Add, edit, inspect, and remove customer accounts, and keep relationship notes with each account. |
-| Playbooks | `/playbooks` | Create and edit reusable onboarding, renewal, recovery, and advocacy plans. Activate or pause plans, or run one for a customer to create real follow-up tasks. |
-| Tasks | `/tasks` | Add, edit, complete, reopen, search, filter, sort, and remove customer follow-ups. Each task has a customer, owner, due date, category, priority, and status. |
-| Insights | `/insights` | Review account health, revenue by plan, renewal coverage, and at-risk revenue. Export the current customer report as a CSV file. |
-| Not found | Any unmatched route | Shows a recovery page with a link back to the workspace. |
+| Page      | Route               | What it does                                                                                                                                                                                       |
+| --------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Overview  | `/`                 | Shows portfolio health, revenue, customers needing attention, upcoming renewals, recent activity, and next actions. Change the health chart range, open account details, and complete a task here. |
+| Customers | `/customers`        | Search, filter, sort, and switch between list and card views. Add, edit, inspect, and remove customer accounts, and keep relationship notes with each account.                                     |
+| Playbooks | `/playbooks`        | Create and edit reusable onboarding, renewal, recovery, and advocacy plans. Activate or pause plans, or run one for a customer to create real follow-up tasks.                                     |
+| Tasks     | `/tasks`            | Add, edit, complete, reopen, search, filter, sort, and remove customer follow-ups. Each task has a customer, owner, due date, category, priority, and status.                                      |
+| Insights  | `/insights`         | Review account health, revenue by plan, renewal coverage, and at-risk revenue. Export the current customer report as a CSV file.                                                                   |
+| Not found | Any unmatched route | Shows a recovery page with a link back to the workspace.                                                                                                                                           |
 
 The fixed header provides customer search (`Ctrl+K`), a customer creation shortcut, seeded reminders, repository access, and profile/workspace menus. On narrow screens the sidebar becomes a keyboard-accessible navigation drawer. The header remains visible while scrolling because the app has a persistent sidebar.
 
@@ -46,47 +46,47 @@ These images were captured from the local production build with seeded demo data
 
 ### Pages
 
-| Screen | Screenshot |
-| --- | --- |
-| Overview | ![Harbor overview dashboard](./screenshots/pages/overview.png) |
-| Customers | ![Customer account list with health and renewal filters](./screenshots/pages/customers.png) |
+| Screen              | Screenshot                                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------- |
+| Overview            | ![Harbor overview dashboard](./screenshots/pages/overview.png)                              |
+| Customers           | ![Customer account list with health and renewal filters](./screenshots/pages/customers.png) |
 | Customers on mobile | ![Responsive customer cards on a mobile viewport](./screenshots/pages/customers-mobile.png) |
-| Playbooks | ![Reusable customer success playbooks](./screenshots/pages/playbooks.png) |
-| Tasks | ![Customer follow-up task list](./screenshots/pages/tasks.png) |
-| Insights | ![Customer health and revenue insights](./screenshots/pages/insights.png) |
-| Not found | ![Unmatched route recovery page](./screenshots/pages/not-found.png) |
+| Playbooks           | ![Reusable customer success playbooks](./screenshots/pages/playbooks.png)                   |
+| Tasks               | ![Customer follow-up task list](./screenshots/pages/tasks.png)                              |
+| Insights            | ![Customer health and revenue insights](./screenshots/pages/insights.png)                   |
+| Not found           | ![Unmatched route recovery page](./screenshots/pages/not-found.png)                         |
 
 ### Customer dialogs
 
-| Dialog | Screenshot |
-| --- | --- |
-| Add customer | ![Add customer form and validation fields](./screenshots/modals/customer-create.png) |
-| Edit customer | ![Edit customer form](./screenshots/modals/customer-edit.png) |
-| Customer details | ![Customer detail panel with account notes and linked activity](./screenshots/modals/customer-details.png) |
+| Dialog                       | Screenshot                                                                                                    |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Add customer                 | ![Add customer form and validation fields](./screenshots/modals/customer-create.png)                          |
+| Edit customer                | ![Edit customer form](./screenshots/modals/customer-edit.png)                                                 |
+| Customer details             | ![Customer detail panel with account notes and linked activity](./screenshots/modals/customer-details.png)    |
 | Remove customer confirmation | ![Confirmation before removing a customer and linked tasks](./screenshots/modals/customer-delete-confirm.png) |
 
 ### Task dialogs
 
-| Dialog | Screenshot |
-| --- | --- |
-| Add task | ![Add a customer follow-up task](./screenshots/modals/task-create.png) |
-| Edit task | ![Edit a customer task](./screenshots/modals/task-edit.png) |
+| Dialog                   | Screenshot                                                                           |
+| ------------------------ | ------------------------------------------------------------------------------------ |
+| Add task                 | ![Add a customer follow-up task](./screenshots/modals/task-create.png)               |
+| Edit task                | ![Edit a customer task](./screenshots/modals/task-edit.png)                          |
 | Remove task confirmation | ![Confirmation before removing a task](./screenshots/modals/task-delete-confirm.png) |
 
 ### Playbook dialogs
 
-| Dialog | Screenshot |
-| --- | --- |
-| Create playbook | ![Create a reusable customer success playbook](./screenshots/modals/playbook-create.png) |
-| Edit playbook | ![Edit playbook details and steps](./screenshots/modals/playbook-edit.png) |
-| Run playbook | ![Choose a customer and review the tasks a playbook will create](./screenshots/modals/playbook-run.png) |
-| Remove playbook confirmation | ![Confirmation before removing a playbook](./screenshots/modals/playbook-delete-confirm.png) |
+| Dialog                       | Screenshot                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Create playbook              | ![Create a reusable customer success playbook](./screenshots/modals/playbook-create.png)                |
+| Edit playbook                | ![Edit playbook details and steps](./screenshots/modals/playbook-edit.png)                              |
+| Run playbook                 | ![Choose a customer and review the tasks a playbook will create](./screenshots/modals/playbook-run.png) |
+| Remove playbook confirmation | ![Confirmation before removing a playbook](./screenshots/modals/playbook-delete-confirm.png)            |
 
 ### Workspace dialogs
 
-| Dialog | Screenshot |
-| --- | --- |
-| Profile | ![Workspace user profile](./screenshots/modals/profile.png) |
+| Dialog             | Screenshot                                                                           |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| Profile            | ![Workspace user profile](./screenshots/modals/profile.png)                          |
 | Workspace settings | ![Workspace name and reminder settings](./screenshots/modals/workspace-settings.png) |
 
 ## Run locally
@@ -137,4 +137,3 @@ These improvements need a backend or external service and are not implemented in
 - Support: [https://a2rp-donation-page.netlify.app/](https://a2rp-donation-page.netlify.app/)
 - Buy Me a Coffee: [https://buymeacoffee.com/ashishranjan](https://buymeacoffee.com/ashishranjan)
 - Patreon: [https://www.patreon.com/ashishranjan](https://www.patreon.com/ashishranjan)
-

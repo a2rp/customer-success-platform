@@ -10,8 +10,11 @@ const Modal = ({ title, description, onClose, children, size = "medium" }) => {
     useEffect(() => {
         const previousFocus = document.activeElement;
         const frame = window.requestAnimationFrame(() => {
-            const autofocus = dialogRef.current?.querySelector("[data-autofocus]");
-            const firstControl = dialogRef.current?.querySelector("button, input, select, textarea, a[href]");
+            const autofocus =
+                dialogRef.current?.querySelector("[data-autofocus]");
+            const firstControl = dialogRef.current?.querySelector(
+                "button, input, select, textarea, a[href]",
+            );
             (autofocus || firstControl)?.focus();
         });
         const handleKeyDown = (event) => {
@@ -20,7 +23,11 @@ const Modal = ({ title, description, onClose, children, size = "medium" }) => {
                 onClose();
             }
             if (event.key === "Tab" && dialogRef.current) {
-                const focusable = [...dialogRef.current.querySelectorAll("button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), a[href], [tabindex]:not([tabindex='-1'])")];
+                const focusable = [
+                    ...dialogRef.current.querySelectorAll(
+                        "button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), a[href], [tabindex]:not([tabindex='-1'])",
+                    ),
+                ];
                 if (focusable.length < 1) return;
                 const first = focusable[0];
                 const last = focusable[focusable.length - 1];
@@ -42,7 +49,12 @@ const Modal = ({ title, description, onClose, children, size = "medium" }) => {
     }, [onClose]);
 
     return (
-        <div className={styles.overlay} onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+        <div
+            className={styles.overlay}
+            onMouseDown={(event) =>
+                event.target === event.currentTarget && onClose()
+            }
+        >
             <section
                 aria-describedby={description ? descriptionId : undefined}
                 aria-labelledby={titleId}
@@ -57,7 +69,12 @@ const Modal = ({ title, description, onClose, children, size = "medium" }) => {
                         <h2 id={titleId}>{title}</h2>
                         {description && <p id={descriptionId}>{description}</p>}
                     </div>
-                    <button aria-label="Close dialog" className={styles.closeButton} onClick={onClose} type="button">
+                    <button
+                        aria-label="Close dialog"
+                        className={styles.closeButton}
+                        onClick={onClose}
+                        type="button"
+                    >
                         <FiX aria-hidden="true" />
                     </button>
                 </header>
@@ -68,4 +85,3 @@ const Modal = ({ title, description, onClose, children, size = "medium" }) => {
 };
 
 export default Modal;
-

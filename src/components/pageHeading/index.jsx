@@ -11,4 +11,3 @@ const PageHeading = ({ title, description, actions }) => (
 );
 
 export default PageHeading;
-

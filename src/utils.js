@@ -1,4 +1,8 @@
-﻿const formatDate = (date) => new Date(date + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
+﻿const formatDate = (date) =>
+    new Date(date + "T00:00:00").toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+    });
 
 export { formatDate };
 
@@ -10,7 +14,8 @@ const formatMoney = (value) => {
 
 export { formatMoney };
 
-const getCustomer = (customers, customerId) => customers.find((customer) => customer.id === customerId);
+const getCustomer = (customers, customerId) =>
+    customers.find((customer) => customer.id === customerId);
 
 export { getCustomer };
 
@@ -33,4 +38,3 @@ const getDateAfter = (date, days) => {
 };
 
 export { getDateAfter };
-

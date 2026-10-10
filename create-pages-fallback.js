@@ -8,5 +8,8 @@ await copyFile(index, new URL("./dist/404.html", import.meta.url));
 for (const route of routes) {
     const directory = new URL("./dist/" + route + "/", import.meta.url);
     await mkdir(directory, { recursive: true });
-    await copyFile(index, new URL("./dist/" + route + "/index.html", import.meta.url));
+    await copyFile(
+        index,
+        new URL("./dist/" + route + "/index.html", import.meta.url),
+    );
 }

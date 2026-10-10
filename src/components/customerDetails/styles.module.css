@@ -1,59 +1,327 @@
-﻿.details { display: grid; gap: 18px;
-    .identity { display: flex; align-items: center; gap: 15px;
-        > img { width: 62px; height: 62px; flex: 0 0 62px; border: 3px solid #fff; border-radius: 20px; object-fit: cover; box-shadow: 0 5px 18px rgb(22 48 42 / 12%); }
-        > div { min-width: 0; }
-    }
-    .nameLine { display: flex; align-items: center; flex-wrap: wrap; gap: 9px;
-        h3 { color: var(--color-ink); font-size: 19px; font-weight: 720; letter-spacing: -0.03em; }
-        .healthy, .watch, .risk { padding: 4px 9px; border-radius: 999px; font-size: 13px; font-weight: 650; }
-        .healthy { color: #287656; background: #e6f4ec; }
-        .watch { color: #96652b; background: #fbf1df; }
-        .risk { color: #a74d48; background: #fae9e7; }
-    }
-    .identity a, .card > a { display: inline-flex; align-items: center; gap: 5px; margin-top: 4px; color: var(--color-primary); font-size: 14px;
-        svg { width: 14px; height: 14px; }
-    }
-    .identity p { margin-top: 3px; color: var(--color-muted); font-size: 13px; span { padding: 0 5px; } }
-    .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 15px; border: 1px solid var(--color-border); border-radius: 15px; background: #f8faf7;
-        > div { display: grid; gap: 4px; padding: 0 12px; & + div { border-left: 1px solid var(--color-border); } }
-        span { color: var(--color-muted); font-size: 13px; }
-        strong { color: var(--color-ink); font-size: 17px; font-weight: 720; }
-        small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
-    }
-    .columns { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 14px; }
-    .card, .notesCard { padding: 16px; border: 1px solid var(--color-border); border-radius: 15px; background: #fff;
-        h4 { margin-bottom: 10px; color: var(--color-ink); font-size: 14px; font-weight: 700; }
-    }
-    .card { > p { color: var(--color-text); font-size: 15px; font-weight: 650; } > span { display: block; margin-top: 15px; color: var(--color-muted); font-size: 13px; }
-        .sectionHeading { display: flex; justify-content: space-between; h4 { margin-bottom: 8px; } > span { color: var(--color-muted); font-size: 13px; } }
-        .taskLine { display: flex; align-items: flex-start; gap: 9px; padding: 8px 0; border-top: 1px solid #edf0ed;
-            .taskDot, .taskDone { display: grid; width: 18px; height: 18px; flex: 0 0 18px; border: 1.5px solid #b4c2bb; border-radius: 50%; color: var(--color-success); place-items: center; svg { width: 16px; height: 16px; } }
-            .taskDone { border: 0; }
-            div { display: flex; min-width: 0; justify-content: space-between; flex: 1; gap: 8px; strong { color: #344a44; font-size: 13px; font-weight: 600; } small { flex: 0 0 auto; color: var(--color-muted); font-size: 13px; } }
+﻿.details {
+    display: grid;
+    gap: 18px;
+    .identity {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        > img {
+            width: 62px;
+            height: 62px;
+            flex: 0 0 62px;
+            border: 3px solid #fff;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 18px rgb(22 48 42 / 12%);
         }
-        .noTasks { color: var(--color-muted); font-size: 14px; }
-        .viewTasks { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; border: 0; color: var(--color-primary); background: transparent; font-size: 13px; font-weight: 650; svg { width: 14px; height: 14px; } }
-    }
-    .notesCard { > p { color: #66756f; font-size: 14px; line-height: 1.65; white-space: pre-line; }
-        form { display: flex; align-items: flex-end; gap: 9px; margin-top: 12px;
-            textarea { min-width: 0; min-height: 54px; flex: 1; padding: 9px 11px; border: 1px solid var(--color-border); border-radius: 11px; outline: none; font-size: 14px; &:focus { border-color: #6ca192; box-shadow: 0 0 0 3px rgb(23 104 90 / 9%); } }
-            button { min-height: 39px; padding: 0 13px; border: 1px solid #d0e4d9; border-radius: 10px; color: var(--color-primary); background: var(--color-primary-soft); font-size: 13px; font-weight: 650; transition: border-color 150ms ease, box-shadow 150ms ease; &:hover, &:focus-visible { border-color: #8fb9a7; box-shadow: 0 0 0 3px rgb(23 104 90 / 8%); } &:disabled { cursor: not-allowed; opacity: 0.55; } }
+        > div {
+            min-width: 0;
         }
     }
-    .actions { display: flex; justify-content: space-between; gap: 12px;
-        button { display: inline-flex; min-height: 43px; align-items: center; justify-content: center; gap: 7px; padding: 0 15px; border: 1px solid var(--color-border); border-radius: 11px; font-size: 14px; font-weight: 650; transition: border-color 150ms ease, box-shadow 150ms ease; svg { width: 16px; height: 16px; } &:hover, &:focus-visible { border-color: #a0b8ab; box-shadow: 0 0 0 3px rgb(23 104 90 / 8%); } }
-        .removeButton { color: #a4514a; background: #fff; }
-        .editButton { border-color: var(--color-primary); color: #fff; background: var(--color-primary); }
+    .nameLine {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 9px;
+        h3 {
+            color: var(--color-ink);
+            font-size: 19px;
+            font-weight: 720;
+            letter-spacing: -0.03em;
+        }
+        .healthy,
+        .watch,
+        .risk {
+            padding: 4px 9px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 650;
+        }
+        .healthy {
+            color: #287656;
+            background: #e6f4ec;
+        }
+        .watch {
+            color: #96652b;
+            background: #fbf1df;
+        }
+        .risk {
+            color: #a74d48;
+            background: #fae9e7;
+        }
+    }
+    .identity a,
+    .card > a {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 4px;
+        color: var(--color-primary);
+        font-size: 14px;
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+    .identity p {
+        margin-top: 3px;
+        color: var(--color-muted);
+        font-size: 13px;
+        span {
+            padding: 0 5px;
+        }
+    }
+    .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding: 15px;
+        border: 1px solid var(--color-border);
+        border-radius: 15px;
+        background: #f8faf7;
+        > div {
+            display: grid;
+            gap: 4px;
+            padding: 0 12px;
+            & + div {
+                border-left: 1px solid var(--color-border);
+            }
+        }
+        span {
+            color: var(--color-muted);
+            font-size: 13px;
+        }
+        strong {
+            color: var(--color-ink);
+            font-size: 17px;
+            font-weight: 720;
+        }
+        small {
+            color: var(--color-muted);
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+    .columns {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 14px;
+    }
+    .card,
+    .notesCard {
+        padding: 16px;
+        border: 1px solid var(--color-border);
+        border-radius: 15px;
+        background: #fff;
+        h4 {
+            margin-bottom: 10px;
+            color: var(--color-ink);
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+    .card {
+        > p {
+            color: var(--color-text);
+            font-size: 15px;
+            font-weight: 650;
+        }
+        > span {
+            display: block;
+            margin-top: 15px;
+            color: var(--color-muted);
+            font-size: 13px;
+        }
+        .sectionHeading {
+            display: flex;
+            justify-content: space-between;
+            h4 {
+                margin-bottom: 8px;
+            }
+            > span {
+                color: var(--color-muted);
+                font-size: 13px;
+            }
+        }
+        .taskLine {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            padding: 8px 0;
+            border-top: 1px solid #edf0ed;
+            .taskDot,
+            .taskDone {
+                display: grid;
+                width: 18px;
+                height: 18px;
+                flex: 0 0 18px;
+                border: 1.5px solid #b4c2bb;
+                border-radius: 50%;
+                color: var(--color-success);
+                place-items: center;
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            .taskDone {
+                border: 0;
+            }
+            div {
+                display: flex;
+                min-width: 0;
+                justify-content: space-between;
+                flex: 1;
+                gap: 8px;
+                strong {
+                    color: #344a44;
+                    font-size: 13px;
+                    font-weight: 600;
+                }
+                small {
+                    flex: 0 0 auto;
+                    color: var(--color-muted);
+                    font-size: 13px;
+                }
+            }
+        }
+        .noTasks {
+            color: var(--color-muted);
+            font-size: 14px;
+        }
+        .viewTasks {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 8px;
+            border: 0;
+            color: var(--color-primary);
+            background: transparent;
+            font-size: 13px;
+            font-weight: 650;
+            svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+    }
+    .notesCard {
+        > p {
+            color: #66756f;
+            font-size: 14px;
+            line-height: 1.65;
+            white-space: pre-line;
+        }
+        form {
+            display: flex;
+            align-items: flex-end;
+            gap: 9px;
+            margin-top: 12px;
+            textarea {
+                min-width: 0;
+                min-height: 54px;
+                flex: 1;
+                padding: 9px 11px;
+                border: 1px solid var(--color-border);
+                border-radius: 11px;
+                outline: none;
+                font-size: 14px;
+                &:focus {
+                    border-color: #6ca192;
+                    box-shadow: 0 0 0 3px rgb(23 104 90 / 9%);
+                }
+            }
+            button {
+                min-height: 39px;
+                padding: 0 13px;
+                border: 1px solid #d0e4d9;
+                border-radius: 10px;
+                color: var(--color-primary);
+                background: var(--color-primary-soft);
+                font-size: 13px;
+                font-weight: 650;
+                transition:
+                    border-color 150ms ease,
+                    box-shadow 150ms ease;
+                &:hover,
+                &:focus-visible {
+                    border-color: #8fb9a7;
+                    box-shadow: 0 0 0 3px rgb(23 104 90 / 8%);
+                }
+                &:disabled {
+                    cursor: not-allowed;
+                    opacity: 0.55;
+                }
+            }
+        }
+    }
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        button {
+            display: inline-flex;
+            min-height: 43px;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 0 15px;
+            border: 1px solid var(--color-border);
+            border-radius: 11px;
+            font-size: 14px;
+            font-weight: 650;
+            transition:
+                border-color 150ms ease,
+                box-shadow 150ms ease;
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+            &:hover,
+            &:focus-visible {
+                border-color: #a0b8ab;
+                box-shadow: 0 0 0 3px rgb(23 104 90 / 8%);
+            }
+        }
+        .removeButton {
+            color: #a4514a;
+            background: #fff;
+        }
+        .editButton {
+            border-color: var(--color-primary);
+            color: #fff;
+            background: var(--color-primary);
+        }
     }
     @media (max-width: 620px) {
-        .metrics { grid-template-columns: 1fr; gap: 9px; }
-        .metrics > div { padding: 5px 4px; }
-        .metrics > div + div { border-left: 0; border-top: 1px solid var(--color-border); padding-top: 10px; }
-        .columns { grid-template-columns: 1fr; }
+        .metrics {
+            grid-template-columns: 1fr;
+            gap: 9px;
+        }
+        .metrics > div {
+            padding: 5px 4px;
+        }
+        .metrics > div + div {
+            border-left: 0;
+            border-top: 1px solid var(--color-border);
+            padding-top: 10px;
+        }
+        .columns {
+            grid-template-columns: 1fr;
+        }
     }
     @media (max-width: 460px) {
-        .identity { align-items: flex-start; }
-        .identity > img { width: 54px; height: 54px; flex-basis: 54px; border-radius: 18px; }
-        .notesCard form { align-items: stretch; flex-direction: column; }
+        .identity {
+            align-items: flex-start;
+        }
+        .identity > img {
+            width: 54px;
+            height: 54px;
+            flex-basis: 54px;
+            border-radius: 18px;
+        }
+        .notesCard form {
+            align-items: stretch;
+            flex-direction: column;
+        }
     }
 }

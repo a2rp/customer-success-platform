@@ -21,8 +21,12 @@
         pointer-events: auto;
         animation: toast-enter 180ms ease-out;
 
-        &[data-type="error"] { border-color: #f0d0ca; }
-        &[data-type="info"] { border-color: #d7e6df; }
+        &[data-type="error"] {
+            border-color: #f0d0ca;
+        }
+        &[data-type="info"] {
+            border-color: #d7e6df;
+        }
 
         .icon {
             display: grid;
@@ -34,13 +38,27 @@
             background: #e8f4ec;
             place-items: center;
 
-            svg { width: 17px; height: 17px; }
+            svg {
+                width: 17px;
+                height: 17px;
+            }
         }
 
-        &[data-type="error"] .icon { color: var(--color-danger); background: #fae9e7; }
-        &[data-type="info"] .icon { color: var(--color-primary); background: var(--color-primary-soft); }
+        &[data-type="error"] .icon {
+            color: var(--color-danger);
+            background: #fae9e7;
+        }
+        &[data-type="info"] .icon {
+            color: var(--color-primary);
+            background: var(--color-primary-soft);
+        }
 
-        p { flex: 1; color: var(--color-text); font-size: 14px; font-weight: 550; }
+        p {
+            flex: 1;
+            color: var(--color-text);
+            font-size: 14px;
+            font-weight: 550;
+        }
         > button {
             display: grid;
             width: 34px;
@@ -50,11 +68,19 @@
             color: var(--color-muted);
             background: transparent;
             place-items: center;
-            transition: border-color 150ms ease, box-shadow 150ms ease;
+            transition:
+                border-color 150ms ease,
+                box-shadow 150ms ease;
 
-            svg { width: 17px; height: 17px; }
+            svg {
+                width: 17px;
+                height: 17px;
+            }
             &:hover,
-            &:focus-visible { border-color: var(--color-border); box-shadow: 0 0 0 3px rgb(23 104 90 / 8%); }
+            &:focus-visible {
+                border-color: var(--color-border);
+                box-shadow: 0 0 0 3px rgb(23 104 90 / 8%);
+            }
         }
     }
 
@@ -66,6 +92,12 @@
 }
 
 @keyframes toast-enter {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

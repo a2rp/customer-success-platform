@@ -29,7 +29,9 @@
             color: var(--color-text);
             background: #fff;
             font-size: 14px;
-            transition: border-color 150ms ease, box-shadow 150ms ease;
+            transition:
+                border-color 150ms ease,
+                box-shadow 150ms ease;
 
             &:focus {
                 border-color: #6ca192;
@@ -58,7 +60,9 @@
         border-radius: 12px;
         font-size: 14px;
         font-weight: 680;
-        transition: border-color 160ms ease, box-shadow 160ms ease;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
 
         &:hover,
         &:focus-visible {

@@ -1,7 +1,67 @@
-﻿.notFound { display: grid; min-height: 60vh; justify-items: center; align-content: center; padding: 28px; text-align: center;
-    .icon { display: grid; width: 58px; height: 58px; border-radius: 19px; color: var(--color-primary); background: var(--color-primary-soft); place-items: center; svg { width: 26px; height: 26px; } }
-    .code { margin-top: 18px; color: #9aaca0; font-size: 13px; font-weight: 750; letter-spacing: 0.13em; }
-    h1 { margin-top: 5px; color: var(--color-ink); font-size: clamp(23px, 4vw, 31px); font-weight: 740; letter-spacing: -0.045em; }
-    .description { max-width: 450px; margin-top: 8px; color: var(--color-muted); font-size: 15px; }
-    .homeButton { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; margin-top: 20px; padding: 0 15px; border: 1px solid var(--color-primary); border-radius: 12px; color: #fff; background: var(--color-primary); font-size: 14px; font-weight: 650; transition: border-color 150ms ease, box-shadow 150ms ease; svg { width: 16px; height: 16px; } &:hover, &:focus-visible { border-color: var(--color-primary-dark); box-shadow: 0 0 0 4px rgb(23 104 90 / 14%); } }
+﻿.notFound {
+    display: grid;
+    min-height: 60vh;
+    justify-items: center;
+    align-content: center;
+    padding: 28px;
+    text-align: center;
+    .icon {
+        display: grid;
+        width: 58px;
+        height: 58px;
+        border-radius: 19px;
+        color: var(--color-primary);
+        background: var(--color-primary-soft);
+        place-items: center;
+        svg {
+            width: 26px;
+            height: 26px;
+        }
+    }
+    .code {
+        margin-top: 18px;
+        color: #9aaca0;
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+    }
+    h1 {
+        margin-top: 5px;
+        color: var(--color-ink);
+        font-size: clamp(23px, 4vw, 31px);
+        font-weight: 740;
+        letter-spacing: -0.045em;
+    }
+    .description {
+        max-width: 450px;
+        margin-top: 8px;
+        color: var(--color-muted);
+        font-size: 15px;
+    }
+    .homeButton {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+        padding: 0 15px;
+        border: 1px solid var(--color-primary);
+        border-radius: 12px;
+        color: #fff;
+        background: var(--color-primary);
+        font-size: 14px;
+        font-weight: 650;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+        &:hover,
+        &:focus-visible {
+            border-color: var(--color-primary-dark);
+            box-shadow: 0 0 0 4px rgb(23 104 90 / 14%);
+        }
+    }
 }

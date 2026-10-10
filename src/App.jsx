@@ -8,7 +8,9 @@ import Toasts from "./components/toasts";
 
 const App = () => (
     <div className={styles.app}>
-        <a className={styles.skipLink} href="#main-content">Skip to content</a>
+        <a className={styles.skipLink} href="#main-content">
+            Skip to content
+        </a>
         <Header />
         <Sidebar />
         <main className={styles.main} id="main-content">
@@ -21,4 +23,3 @@ const App = () => (
 );
 
 export default App;
-
