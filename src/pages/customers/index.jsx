@@ -15,7 +15,12 @@ import {
 import CustomerAvatar from "../../components/customerAvatar";
 import HealthIndicator from "../../components/healthIndicator";
 import PageHeading from "../../components/pageHeading";
-import { formatDate, formatMoney } from "../../utils.js";
+import {
+    formatDate,
+    formatMoney,
+    getDateAfter,
+    getToday,
+} from "../../utils.js";
 import { useApp } from "../../context/useApp.js";
 import styles from "./styles.module.css";
 import { useSearchParams } from "react-router-dom";
@@ -61,10 +66,8 @@ const CustomersPage = () => {
 
     const filteredCustomers = useMemo(() => {
         const normalized = query.trim().toLowerCase();
-        const now = new Date();
-        const next90 = new Date(now.getTime() + 90 * 86400000)
-            .toISOString()
-            .slice(0, 10);
+        const today = getToday();
+        const next90 = getDateAfter(today, 90);
         return customers
             .filter((customer) => {
                 const matchesQuery =
@@ -83,7 +86,7 @@ const CustomersPage = () => {
                     status === "All statuses" || customer.status === status;
                 const matchesRenewal =
                     renewalFilter !== "next-90" ||
-                    (customer.renewal >= now.toISOString().slice(0, 10) &&
+                    (customer.renewal >= today &&
                         customer.renewal <= next90);
                 return matchesQuery && matchesStatus && matchesRenewal;
             })

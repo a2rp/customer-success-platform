@@ -1,5 +1,6 @@
 ﻿import { useState } from "react";
 import { AppContext } from "./context.js";
+import { getDateAfter, getToday } from "../utils.js";
 
 const initialCustomers = [
     {
@@ -493,9 +494,7 @@ export const AppProvider = ({ children }) => {
             id: makeId("task"),
             title: step,
             accountId,
-            due: new Date(Date.now() + (index + 1) * 86400000)
-                .toISOString()
-                .slice(0, 10),
+            due: getDateAfter(getToday(), index + 1),
             owner: customer.owner,
             priority: index === 0 ? "High" : "Normal",
             status: "Open",

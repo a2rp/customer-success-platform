@@ -110,13 +110,16 @@ const InsightsPage = () => {
         const csv = [headers, ...rows]
             .map((row) =>
                 row
-                    .map(
-                        (value) =>
-                            '"' + String(value).replaceAll('"', '""') + '"',
-                    )
+                    .map((value) => {
+                        let cell = String(value ?? "");
+                        if (["=", "+", "-", "@"].includes(cell.trimStart()[0])) {
+                            cell = "'" + cell;
+                        }
+                        return '"' + cell.replaceAll('"', '""') + '"';
+                    })
                     .join(","),
             )
-            .join("\n");
+            .join("\r\n");
         const file = new Blob(["\ufeff" + csv], {
             type: "text/csv;charset=utf-8",
         });
@@ -124,8 +127,10 @@ const InsightsPage = () => {
         const link = document.createElement("a");
         link.href = fileUrl;
         link.download = "harbor-customer-health.csv";
+        document.body.append(link);
         link.click();
-        URL.revokeObjectURL(fileUrl);
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(fileUrl), 1000);
         addToast("Customer health report downloaded");
     };
 
